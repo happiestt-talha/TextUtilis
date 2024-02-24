@@ -7,19 +7,24 @@ export default function Textform(props) {
     }
     const uppercase = () => {
         setText(text.toUpperCase())
+        props.showAlert("Converted to uppercase", "success");
     }
     const lowerrcase = () => {
         setText(text.toLowerCase())
+        props.showAlert("Converted to lowercase", "success");
     }
     const remSpace = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert("Extra spaces removed", "warning");
     }
     const CopyTxt = () => {
         navigator.clipboard.writeText(text)
+        props.showAlert("Text copied to clipboard", "success");
     }
     const clearBox = () => {
         setText("")
+        props.showAlert("Text cleared", "danger");
     }
     return (
         <>

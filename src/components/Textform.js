@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Textform() {
+export default function Textform(props) {
     return (
         <>
-            <div class="container my-3">
-                <label htmlFor="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div className={`container my-3 text-${props.mode === 'dark' ? 'light' : 'dark'}`} >
+                <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
+                <textarea className={`form-control bg-${props.mode === 'dark' ? 'dark' : 'light'} text-${props.mode === 'dark' ? 'light' : 'dark'}`} id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
         </>
     )
